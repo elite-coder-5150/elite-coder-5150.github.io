@@ -1,0 +1,121 @@
+/***** 1.0 colors *****/
+/***** 1.0 fonts *****/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: #F4EAE1;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+@media (width <= 375px) {
+  .card {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+@media (width <= 375px) {
+  .card .left img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    height: 240px;
+    width: 100%;
+    background-position: center center;
+  }
+}
+.card .right {
+  background: #fff;
+  width: 300px;
+  padding: 25px 33px 0 33px;
+  border-radius: 0 10px 10px 0;
+}
+@media (width <= 375px) {
+  .card .right {
+    padding-bottom: 25px;
+    border-radius: 0;
+  }
+}
+.card .product-category {
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+.card .product-title {
+  font-family: "Fraunces", sans-serif;
+  font-size: 32px;
+  margin-bottom: 24px;
+  font-weight: 700;
+}
+.card .product-desc {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  line-height: 21px;
+  margin-bottom: 30px;
+  color: #6B728B;
+}
+.card .prices {
+  display: flex;
+  -webkit-column-gap: 20px;
+     -moz-column-gap: 20px;
+          column-gap: 20px;
+}
+.card .prices .sale-price {
+  font-size: 32px;
+  font-weight: 700;
+  font-family: "Fraunces", sans-serif;
+  color: #168365;
+}
+.card .prices .regular-price {
+  text-decoration: line-through;
+  font-family: "Montserrat", sans-serif;
+  line-height: 40px;
+  color: #6B728B;
+}
+.card .button-container {
+  margin-top: 20px;
+}
+.card .button-container .primary {
+  position: relative;
+  background: #3D9278;
+  border: 1px solid #3D9278;
+  display: block;
+  color: #fff;
+  width: 100%;
+  padding: 10px 0;
+  font-size: 14px;
+  line-height: 24px;
+  border-radius: 8px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+.card .button-container .primary .icon {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  top: 13px;
+  left: 50px;
+  position: absolute;
+}
+.card .button-container .primary .icon .shopping-cart-icon {
+  background: url("../img/shopping-cart-icon.svg") no-repeat;
+  width: 16px;
+  height: 16px;
+}
+.card .button-container .primary:hover {
+  background: #034131;
+  cursor: pointer;
+}
