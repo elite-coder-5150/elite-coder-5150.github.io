@@ -1,0 +1,153 @@
+@import "mixins";
+
+/***** 1.0 colors *****/
+$clr-body-bg: #F4EAE1;
+$clr-supportive-text: #6B728B;
+$clr-heading-text: #1A232C;
+
+/***** 1.0 fonts *****/
+$category-text-font: "Montserrat", sans-serif;
+$heading-text-font: "Fraunces", sans-serif;
+$body-copy-font: "Montserrat", sans-serif;
+$price-font: "Fraunces", sans-serif;
+$sales-font: "Montserrat", sans-serif;
+$regular-price-font: "Montserrat", sans-serif;
+$btn-font: "Montserrat", sans-serif;
+
+$clr-btn-bg: #3D9278;
+$clr-body-copy: #6B728B;
+$clr-sale-price: #168365;
+$clr-regular-price: #6B728B;
+$clr-hover-btn-bg: #034131;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+    width: 100vw;
+    height: 100vh;
+
+    background: #F4EAE1;
+}
+
+.card {
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0 0 20px rgba(black, 0.1);
+
+    @include mobile {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0;
+        
+    }
+
+    .left {
+        img {
+            @include mobile {
+                object-fit: cover;
+                height: 240px;
+                width: 100%;
+                background-position: center center;
+            }
+        }
+    }
+    .right {
+        background: #fff;
+        width: 300px;
+        padding: 25px 33px 0 33px;
+        border-radius: 0 10px 10px 0;
+
+        @include mobile {
+            padding-bottom: 25px;
+            border-radius: 0;
+        } 
+    }
+
+    .product-category {
+        font-family: $category-text-font;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 20px;
+    }
+
+    .product-title {
+        font-family: $heading-text-font;
+        font-size: 32px;
+        margin-bottom: 24px;
+        font-weight: 700;
+    }
+
+    .product-desc {
+        font-family: $body-copy-font;
+        font-size: 14px;
+        line-height: 21px;
+        margin-bottom: 30px;
+        color: $clr-body-copy;
+    }
+
+    .prices {
+        display: flex;
+        column-gap: 20px;
+
+        .sale-price {
+            font-size: 32px;
+            font-weight: 700;
+            font-family: $price-font;
+            color: $clr-sale-price;
+        }
+
+        .regular-price {
+            text-decoration: line-through;
+            font-family: $regular-price-font;
+            line-height: 40px;
+            color: $clr-regular-price;
+        }
+    }
+
+    .button-container {
+        margin-top: 20px;
+
+        .primary {
+            position: relative;
+
+            .icon {
+                width: 16px;
+                height: 16px;
+                display: inline-block;
+                top: 13px;
+                left: 50px;
+                position: absolute;
+
+                .shopping-cart-icon {
+                    background: url('../img/shopping-cart-icon.svg') no-repeat;
+                    width: 16px;
+                    height: 16px;
+                }
+            }
+            background: $clr-btn-bg;
+            border: 1px solid $clr-btn-bg;
+            display: block;
+            color: #fff;
+            width: 100%;
+            padding: 10px 0;
+            font-size: 14px;
+            line-height: 24px;
+            border-radius: 8px;
+            font-family: $btn-font;
+            font-weight: 600;
+
+            &:hover {
+                background: $clr-hover-btn-bg;
+                cursor: pointer;
+            }
+        }
+    }
+}
